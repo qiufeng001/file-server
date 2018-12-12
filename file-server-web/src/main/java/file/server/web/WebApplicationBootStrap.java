@@ -9,7 +9,6 @@ import wx.configuration.ApplicationBootStrap;
 
 @SpringBootApplication
 @EnableTransactionManagement // 事物注解
-@ImportResource(locations={"classpath:spring-redis.xml"})
 @ComponentScan(basePackages = {
 								"file.server.web.controller"
 							   })
