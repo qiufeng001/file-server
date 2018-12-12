@@ -40,7 +40,6 @@ public class FileServerController {
     public JsonResult<Map<String, String>> uploadFile(@RequestParam(value = "uploadFile") MultipartFile multipartFile,
                                                       HttpServletRequest request)
             throws IOException {
-
         try {
             FileServerEntity file = new FileServerEntity();
             Map<String, String> values = new HashMap<>();
@@ -48,7 +47,6 @@ public class FileServerController {
             service.storageFile(file, multipartFile.getBytes());
             String filePath = service.getFilePath(file.getId());
             values.put("path", filePath);
-
             values.put("fileId", file.getId());
             return new JsonResult<>(true, "上传成功", values);
         } catch (Exception ex) {
@@ -63,7 +61,7 @@ public class FileServerController {
         List<FileServerEntity> list = service.selectByPage(query, page);
 
         List<FileServerEntity> result = new ArrayList<>();
-        for(FileServerEntity file : list) {
+        for (FileServerEntity file : list) {
             String filePath = service.getFilePath(file);
             file.setFilePath(filePath);
             result.add(file);
@@ -72,10 +70,10 @@ public class FileServerController {
     }
 
     /**
-     * 对上传的文件进行验证
+     * 对上传的文件进行验证以及属性的设置
      *
      * @param multipartFile 文件的对象
-     * @param file 用于存储文件相关的信息
+     * @param file          用于存储文件相关的信息
      * @return 返回验证的结果
      */
     private void setFileAttribute(MultipartFile multipartFile, FileServerEntity file) {
