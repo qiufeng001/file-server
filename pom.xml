@@ -6,7 +6,7 @@
 
     <groupId>file</groupId>
     <artifactId>file-server</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0-SNP</version>
     <modules>
         <module>file-server-service</module>
         <module>file-server-web</module>
