@@ -1,5 +1,0 @@
-# Auto Configure
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-file.server.web.configuration.WebMvcConfig,\
-file.server.web.configuration.WebAutoConfiguration,\
-file.server.web.configuration.ThreadPoolExecutorConfigration
