@@ -10,7 +10,8 @@ import wx.configuration.ApplicationBootStrap;
 @SpringBootApplication
 @EnableTransactionManagement // 事物注解
 @ComponentScan(basePackages = {
-								"file.server.web.controller"
+								"file.server.web.controller",
+								"file.server.web.inspect"
 							   })
 public class WebApplicationBootStrap extends ApplicationBootStrap {
 	public static void main(String[] args) {
